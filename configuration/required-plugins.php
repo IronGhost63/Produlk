@@ -1,4 +1,10 @@
 <?php
+/**
+ * Check and install required plugin(s) to run Produlk
+ *
+ * @package Produlk
+ */
+ 
 add_action( 'tgmpa_register', 'get_required_plugin' );
 
 function get_required_plugin(){

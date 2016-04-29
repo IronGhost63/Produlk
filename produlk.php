@@ -11,5 +11,10 @@
 
 require __DIR__ . '/vendor/autoload.php'; // Load required packages from composer
 require __DIR__ . '/configuration/required-plugins.php';
-require __DIR__ . '/configuratiin/post-type.php';
+require __DIR__ . '/configuration/post-type.php';
+require __DIR__ . '/configuration/metabox.php';
+
+if(is_single() && get_post_type() == 'produlk'){
+	
+}
 ?>
