@@ -1,5 +1,15 @@
 <?php
-// Register Custom Post Type
+/**
+ * Register custom post type(s) and taxonomy(s) for Produlk
+ *
+ * @package Produlk
+ */
+ 
+function produlk_register_data(){
+	produlk_post_type();
+	produlk_category();
+}
+ 
 function produlk_post_type() {
 
 	$labels = array(
@@ -57,5 +67,50 @@ function produlk_post_type() {
 	register_post_type( 'produlk', $args );
 
 }
-add_action( 'init', 'produlk_post_type', 0 );
+
+// Register Custom Taxonomy
+function produlk_category() {
+
+	$labels = array(
+		'name'                       => _x( 'Categories', 'Taxonomy General Name', 'produlk' ),
+		'singular_name'              => _x( 'Category', 'Taxonomy Singular Name', 'produlk' ),
+		'menu_name'                  => __( 'Categories', 'produlk' ),
+		'all_items'                  => __( 'All Categories', 'produlk' ),
+		'parent_item'                => __( 'Parent Category', 'produlk' ),
+		'parent_item_colon'          => __( 'Parent Category:', 'produlk' ),
+		'new_item_name'              => __( 'New Category Name', 'produlk' ),
+		'add_new_item'               => __( 'Add New Categoryr', 'produlk' ),
+		'edit_item'                  => __( 'Edit Category', 'produlk' ),
+		'update_item'                => __( 'Update Category', 'produlk' ),
+		'view_item'                  => __( 'View Category', 'produlk' ),
+		'separate_items_with_commas' => __( 'Separate categories with commas', 'produlk' ),
+		'add_or_remove_items'        => __( 'Add or remove categories', 'produlk' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'produlk' ),
+		'popular_items'              => __( 'Popular Categories', 'produlk' ),
+		'search_items'               => __( 'Search Categories', 'produlk' ),
+		'not_found'                  => __( 'Not Found', 'produlk' ),
+		'no_terms'                   => __( 'No categories', 'produlk' ),
+		'items_list'                 => __( 'Categories list', 'produlk' ),
+		'items_list_navigation'      => __( 'Categories list navigation', 'produlk' ),
+	);
+	$rewrite = array(
+		'slug'                       => 'products/categories/',
+		'with_front'                 => true,
+		'hierarchical'               => true,
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => false,
+		'rewrite'                    => $rewrite,
+	);
+	register_taxonomy( 'produlk', array( 'produlk' ), $args );
+
+}
+
+add_action( 'init', 'produlk_register_data', 0 );
 ?>
