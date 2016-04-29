@@ -1,0 +1,15 @@
+{
+    "name": "jirayu/produlk",
+    "description": "WordPress Items Catalog Plugins",
+    "type": "wordpress-plugin",
+    "require": {
+        "composer/installers": "^1.0",
+        "tgmpa/tgm-plugin-activation": "^2.5"
+    },
+    "authors": [
+        {
+            "name": "Jirayu Yingthawornsuk",
+            "email": "me@jirayu.in.th"
+        }
+    ]
+}
