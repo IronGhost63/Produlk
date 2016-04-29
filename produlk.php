@@ -10,6 +10,7 @@
 */
 
 require __DIR__ . '/vendor/autoload.php'; // Load required packages from composer
+require __DIR__ . '/helpers/cmb-field-select2/cmb-field-select2.php';
 require __DIR__ . '/configuration/required-plugins.php';
 require __DIR__ . '/configuration/post-type.php';
 require __DIR__ . '/configuration/metabox.php';
