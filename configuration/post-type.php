@@ -1,6 +1,7 @@
 <?php
 /**
  * Register custom post type(s) and taxonomy(s) for Produlk
+ * Generate by GenerateWP.com
  *
  * @package Produlk
  */
