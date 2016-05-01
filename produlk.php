@@ -15,6 +15,14 @@ require __DIR__ . '/configuration/required-plugins.php';
 require __DIR__ . '/configuration/post-type.php';
 require __DIR__ . '/configuration/metabox.php';
 
+add_action('admin_init', 'produlk_admin_init');
+
+function produlk_admin_init(){
+	wp_register_script("produlk-admin", plugin_dir_url( __FILE__ ) . '/assets/admin.js', array('jquery'));
+	
+	wp_enqueue_script('produlk-admin');
+}
+
 if(is_single() && get_post_type() == 'produlk'){
 	
 }
