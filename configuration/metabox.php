@@ -27,7 +27,7 @@ function produlk_meta_basic_detail(){
 	));
 	
 	$metabox->add_field(array(
-		'name' => __('Product Variation', 'produlk'),
+		'name' => __('Product Options', 'produlk'),
 		'desc' => __('Check this to enable product variations or options', 'produlk'),
 		'id' => $prefix . 'enable_option',
 		'type' => 'checkbox'
